@@ -1,0 +1,31 @@
+schema: '2.0'
+stages:
+  get_data:
+    cmd: python src/get_data.py
+    deps:
+    - path: src/get_data.py
+      hash: md5
+      md5: f6381e5a4a3ffaaabee5070bdc5c60a9
+      size: 421
+    outs:
+    - path: smsspamcollection
+      hash: md5
+      md5: 5a84bb806c75cbc704c9fb17e1ba8e44.dir
+      size: 604940
+      nfiles: 3
+  preprocess:
+    cmd: python src/text_preprocessing.py
+    deps:
+    - path: src/text_preprocessing.py
+      hash: md5
+      md5: ed0b9c3b0ff2d70215f4e58f517a46cf
+      size: 2533
+    outs:
+    - path: output/preprocessed_data.joblib
+      hash: md5
+      md5: a41d3fc83cc617549315fb403b3f7167
+      size: 251348
+    - path: output/preprocessor.joblib
+      hash: md5
+      md5: 5fdb36392694cd0c487a25071841bf90
+      size: 91620
